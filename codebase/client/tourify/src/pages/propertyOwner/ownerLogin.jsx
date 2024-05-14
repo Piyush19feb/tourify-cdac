@@ -16,8 +16,9 @@ import {
   Label,
   Row,
 } from "reactstrap";
+import { ownerLogin } from "../../services/owner";
 
-const CustomerLogin = () => {
+const OwnerLogin = () => {
   // create state members
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -36,7 +37,7 @@ const CustomerLogin = () => {
     } else if (password.length === 0) {
       toast.warning("enter password");
     } else {
-      const result = await login(email, password);
+      const result = await ownerLogin(email, password);
       if (result.status === "success") {
         const token = result.data.token;
         const name = result.data.name;
@@ -59,7 +60,7 @@ const CustomerLogin = () => {
           <Col sm={{ size: 6, offset: 3 }}>
             <Card color="dark" inverse>
               <CardHeader className="text-center">
-                <h3>Login</h3>
+                <h3>Login (Property Owner)</h3>
               </CardHeader>
 
               <CardBody>
@@ -109,7 +110,7 @@ const CustomerLogin = () => {
                     <br />
                     <label> Not registered yet?</label>
                     <br />
-                    <Link className="ms-3" to={"/customer/register"}>
+                    <Link className="ms-3" to={"/owner/register"}>
                       Register Now
                     </Link>
                   </Container>
@@ -120,50 +121,7 @@ const CustomerLogin = () => {
         </Row>
       </Container>
     </div>
-
-    // <div>
-    //   <h2 className="page-title">Login</h2>
-
-    //   <div className="row">
-    //     <div className="col"></div>
-
-    //     <div className="col">
-    //       <div className="form">
-    //         <div className="mb-3">
-    //           <label htmlFor="">Email</label>
-    //           <input
-    //             onChange={(e) => {
-    //               setEmail(e.target.value);
-    //             }}
-    //             type="email"
-    //             className="form-control"
-    //           />
-    //         </div>
-    //         <div className="mb-3">
-    //           <label htmlFor="">Password</label>
-    //           <input
-    //             onChange={(e) => {
-    //               setPassword(e.target.value);
-    //             }}
-    //             type="password"
-    //             className="form-control"
-    //           />
-    //         </div>
-
-    //         <div className="mb-3">
-    //           <button onClick={onLogin} className="mt-2 btn btn-success">
-    //             Login
-    //           </button>
-
-    //           <Link to={"/register"}>Register Here</Link>
-    //         </div>
-    //       </div>
-    //     </div>
-
-    //     <div className="col"></div>
-    //   </div>
-    // </div>
   );
 };
 
-export default CustomerLogin;
+export default OwnerLogin;

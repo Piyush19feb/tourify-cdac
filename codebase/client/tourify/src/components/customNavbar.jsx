@@ -48,7 +48,10 @@ const CustomNavBar = () => {
     <div>
       <Navbar color="dark" dark expand="md" fixed="" className="px-3">
         <NavbarBrand tag={ReactLink} to="/">
-          <img className="img" src={require("./1_small.jpg")} alt="logo" />
+          <img className="img" style={{
+          height: 60,
+          width: 60
+        }} src={require("./logo.png")} alt="logo" />
         </NavbarBrand>
         <NavbarToggler
           onClick={() => {
@@ -58,7 +61,7 @@ const CustomNavBar = () => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>
             <NavItem>
-              <NavLink tag={ReactLink} to="/">
+              <NavLink tag={ReactLink} to="/home">
                 Home
               </NavLink>
             </NavItem>
@@ -105,7 +108,7 @@ const CustomNavBar = () => {
               </>
             )}
 
-            {!login && (
+            {/* {!login && (
               <>
                 <NavItem>
                   <NavLink tag={ReactLink} to="/customer/login">
@@ -118,7 +121,7 @@ const CustomNavBar = () => {
                   </NavLink>
                 </NavItem>
               </>
-            )}
+            )} */}
           </Nav>
         </Collapse>
       </Navbar>

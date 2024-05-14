@@ -17,15 +17,16 @@ import {
   Label,
   Row,
 } from "reactstrap";
+import { ownerRegister } from "../../services/owner";
 
 // this is register component for customer
-const CustomerRegister = () => {
+const OwnerRegister = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
-  const [role_id, setRole_id] = useState(101);
+  const [role_id, setRole_id] = useState(102);
 
   const navigate = useNavigate();
 
@@ -46,7 +47,7 @@ const CustomerRegister = () => {
     } else if (address.length === 0) {
       toast.warning("enter address");
     } else {
-      const result = await register(
+      const result = await ownerRegister(
         name,
         email,
         password,
@@ -57,6 +58,7 @@ const CustomerRegister = () => {
       //   if (result["status"] === "success") {
       if (result.status === "success") {
         toast.success("User Registered successfully");
+        navigate("/home");
       } else {
         toast.error("User Registration failed !!");
       }
@@ -70,7 +72,7 @@ const CustomerRegister = () => {
           <Col sm={{ size: 6, offset: 3 }}>
             <Card color="dark" inverse>
               <CardHeader className="text-center">
-                <h3>Sign Up</h3>
+                <h3>Sign Up (Property Owner) </h3>
               </CardHeader>
               <CardBody>
                 {/* creating form */}
@@ -162,7 +164,7 @@ const CustomerRegister = () => {
                     <br />
                     <label> Already registered?</label>
                     <br />
-                    <Link className="ms-3" to={"/customer/login"}>
+                    <Link className="ms-3" to={"/owner/login"}>
                       Login Now
                     </Link>
                   </Container>
@@ -173,88 +175,7 @@ const CustomerRegister = () => {
         </Row>
       </Container>
     </div>
-
-    // <div>
-    //   <h2 className="page-title">Register</h2>
-    //   <div className="row">
-    //     <div className="col"></div>
-
-    //     <div className="col">
-    //       <div className="form">
-    //         {/* for name */}
-    //         <div className="mb-3">
-    //           <label htmlFor="">Name</label>
-    //           <input
-    //             onChange={(e) => {
-    //               setName(e.target.value);
-    //             }}
-    //             type="text"
-    //             className="form-control"
-    //           />
-    //         </div>
-
-    //         {/* for email */}
-    //         <div className="mb-3">
-    //           <label htmlFor="">Email</label>
-    //           <input
-    //             onChange={(e) => {
-    //               setEmail(e.target.value);
-    //             }}
-    //             type="email"
-    //             className="form-control"
-    //           />
-    //         </div>
-
-    //         {/* for password */}
-    //         <div className="mb-3">
-    //           <label htmlFor="">Password</label>
-    //           <input
-    //             onChange={(e) => {
-    //               setPassword(e.target.value);
-    //             }}
-    //             type="password"
-    //             className="form-control"
-    //           />
-    //         </div>
-
-    //         {/* for phone */}
-    //         <div className="mb-3">
-    //           <label htmlFor="">Phone</label>
-    //           <input
-    //             onChange={(e) => {
-    //               setPhone(e.target.value);
-    //             }}
-    //             type="number"
-    //             className="form-control"
-    //           />
-    //         </div>
-
-    //         {/* for Address */}
-    //         <div className="mb-3">
-    //           <label htmlFor="">Address</label>
-    //           <textarea
-    //             onChange={(e) => {
-    //               setAddress(e.target.value);
-    //             }}
-    //             type="text"
-    //             className="form-control"
-    //           />
-    //         </div>
-
-    //         <div className="mb-3">
-    //           <button onClick={onRegister} className="mt-2 btn btn-success">
-    //             Register
-    //           </button>
-
-    //           <Link to={"/login"}> Login Here</Link>
-    //         </div>
-    //       </div>
-    //     </div>
-
-    //     <div className="col"></div>
-    //   </div>
-    // </div>
   );
 };
 
-export default CustomerRegister;
+export default OwnerRegister;
