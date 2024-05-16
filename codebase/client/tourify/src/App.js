@@ -6,15 +6,16 @@ import CustomerRegister from "./pages/customer/customerRegister";
 import AdminLogin from "./pages/admin/adminLogin";
 import OwnerLogin from "./pages/propertyOwner/ownerLogin";
 import OwnerRegister from "./pages/propertyOwner/ownerRegister";
-import Dashboard from "./pages/dashboard/dashboard";
 import Home from "./pages/home/home";
+import Footer from "./components/footer/footer";
+import SignUpCard from "./pages/dashboard/signUpCard";
 
 function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<SignUpCard />} />
         <Route path="/home" element={<Home />} />
         <Route path="/customer/login" element={<CustomerLogin />} />
         <Route path="/customer/register" element={<CustomerRegister />} />
@@ -29,6 +30,12 @@ function App() {
         theme="dark"
         autoClose={4000}
       />
+
+      <br />
+      <br />
+      <br />
+      <br />
+      <Footer />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { register } from "../../services/customer";
 import { Link, useNavigate } from "react-router-dom";
-import "../../css/customer/register.css";
+
 import {
   Button,
   Card,
@@ -18,6 +18,7 @@ import {
   Row,
 } from "reactstrap";
 import { ownerRegister } from "../../services/owner";
+import BeforeLoginNavWithoutLoginBtn from "../../components/beforeLoginNavWithoutLoginBtn/beforeLoginNavWithoutLoginBtn";
 
 // this is register component for customer
 const OwnerRegister = () => {
@@ -67,6 +68,7 @@ const OwnerRegister = () => {
 
   return (
     <div>
+      <BeforeLoginNavWithoutLoginBtn />
       <Container>
         <Row className="mt-4">
           <Col sm={{ size: 6, offset: 3 }}>

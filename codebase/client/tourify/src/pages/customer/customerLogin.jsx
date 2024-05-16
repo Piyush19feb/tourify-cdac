@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { login } from "../../services/customer";
-import "../../css/customer/login.css";
 import {
   Button,
   Card,
@@ -16,6 +15,8 @@ import {
   Label,
   Row,
 } from "reactstrap";
+import BeforeLoginNavbar from "../../components/beforeLoginNavbar/beforeLoginNavbar";
+import BeforeLoginNavWithoutLoginBtn from "../../components/beforeLoginNavWithoutLoginBtn/beforeLoginNavWithoutLoginBtn";
 
 const CustomerLogin = () => {
   // create state members
@@ -54,6 +55,7 @@ const CustomerLogin = () => {
 
   return (
     <div>
+      <BeforeLoginNavWithoutLoginBtn />
       <Container>
         <Row className="mt-5">
           <Col sm={{ size: 6, offset: 3 }}>

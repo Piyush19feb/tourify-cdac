@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import CustomNavBar from "../../components/customNavbar";
 import { getAllCities } from "../../services/other";
 import {
   Button,
@@ -12,14 +11,17 @@ import {
   CardText,
   CardTitle,
 } from "reactstrap";
-import "./dashboard.css";
+import "./signUpCard.css";
 import { useNavigate } from "react-router-dom";
 import City from "../home/city";
+import CustomNavBar from "../../components/navbar/customNavbar";
+import BeforeLoginNavbar from "../../components/beforeLoginNavbar/beforeLoginNavbar";
+import BeforeLoginNavWithoutLoginBtn from "../../components/beforeLoginNavWithoutLoginBtn/beforeLoginNavWithoutLoginBtn";
 
-function Dashboard() {
+function SignUpCard() {
   const [cities, setCities] = useState([]);
-
   const navigate = useNavigate();
+  const flag = false;
 
   useEffect(() => {
     loadCities();
@@ -58,22 +60,22 @@ function Dashboard() {
   };
   return (
     <div>
-      <CustomNavBar />
+      <BeforeLoginNavWithoutLoginBtn />
       <div>
         {cities.map((city) => {
           return <City name={city.name} />;
         })}
       </div>
-      <br />
-      <br />
-      <br />
+
       <br />
       <div>
         <CardGroup>
           <Card className="ms-5">
             <CardImg
+              class="cardImg"
               alt="Card image cap"
-              src="https://picsum.photos/318/180"
+              // src="https://cdn-icons-png.flaticon.com/512/1478/1478890.png"
+              src={require("./customer.png")}
               top
             />
             <CardBody>
@@ -98,7 +100,8 @@ function Dashboard() {
           <Card className="ms-5">
             <CardImg
               alt="Card image cap"
-              src="https://picsum.photos/318/180"
+              // src="https://cdn4.vectorstock.com/i/1000x1000/25/03/manager-hotel-employee-service-vector-10522503.jpg"
+              src={require("./hotelOwner.jpg")}
               top
               width="100%"
             />
@@ -116,7 +119,8 @@ function Dashboard() {
           <Card className="ms-5 me-5">
             <CardImg
               alt="Card image cap"
-              src="https://picsum.photos/318/180"
+              // src="https://i.pinimg.com/originals/6a/44/f0/6a44f0e35b10e6ed063eeebf7ed844f9.jpg"
+              src={require("./admin.jpg")}
               top
               width="100%"
             />
@@ -133,4 +137,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default SignUpCard;

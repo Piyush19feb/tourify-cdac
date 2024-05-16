@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { register } from "../../services/customer";
 import { Link, useNavigate } from "react-router-dom";
-import "../../css/customer/register.css";
 import {
   Button,
   Card,
@@ -17,6 +16,8 @@ import {
   Label,
   Row,
 } from "reactstrap";
+import BeforeLoginNavbar from "../../components/beforeLoginNavbar/beforeLoginNavbar";
+import BeforeLoginNavWithoutLoginBtn from "../../components/beforeLoginNavWithoutLoginBtn/beforeLoginNavWithoutLoginBtn";
 
 // this is register component for customer
 const CustomerRegister = () => {
@@ -65,6 +66,7 @@ const CustomerRegister = () => {
 
   return (
     <div>
+      <BeforeLoginNavWithoutLoginBtn />
       <Container>
         <Row className="mt-4">
           <Col sm={{ size: 6, offset: 3 }}>

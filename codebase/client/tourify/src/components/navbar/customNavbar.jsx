@@ -14,13 +14,12 @@ import {
   DropdownItem,
   NavbarText,
 } from "reactstrap";
-import "./customNavbar.css";
 
 import {
   doLogout,
   getCurrentUserDetail,
   isLoggedIn,
-} from "../authentication/index.js";
+} from "../../authentication/index.js";
 
 import { useNavigate } from "react-router-dom";
 
@@ -48,10 +47,15 @@ const CustomNavBar = () => {
     <div>
       <Navbar color="dark" dark expand="md" fixed="" className="px-3">
         <NavbarBrand tag={ReactLink} to="/">
-          <img className="img" style={{
-          height: 60,
-          width: 60
-        }} src={require("./logo.png")} alt="logo" />
+          <img
+            className="img"
+            style={{
+              height: 60,
+              width: 60,
+            }}
+            src={require("./logo.png")}
+            alt="logo"
+          />
         </NavbarBrand>
         <NavbarToggler
           onClick={() => {
@@ -104,6 +108,16 @@ const CustomNavBar = () => {
 
                 <NavItem>
                   <NavLink onClick={logout}>Logout</NavLink>
+                </NavItem>
+              </>
+            )}
+
+            {!login && (
+              <>
+                <NavItem>
+                  <NavLink tag={ReactLink} to="/signup">
+                    Login / SignUp
+                  </NavLink>
                 </NavItem>
               </>
             )}

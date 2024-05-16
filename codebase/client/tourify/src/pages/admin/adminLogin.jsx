@@ -15,6 +15,7 @@ import {
   Row,
 } from "reactstrap";
 import { adminLogin } from "../../services/admin";
+import BeforeLoginNavWithoutLoginBtn from "../../components/beforeLoginNavWithoutLoginBtn/beforeLoginNavWithoutLoginBtn";
 
 const AdminLogin = () => {
   // create state members
@@ -53,6 +54,7 @@ const AdminLogin = () => {
 
   return (
     <div>
+      <BeforeLoginNavWithoutLoginBtn />
       <Container>
         <Row className="mt-5">
           <Col sm={{ size: 6, offset: 3 }}>
