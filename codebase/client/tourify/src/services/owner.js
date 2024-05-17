@@ -8,7 +8,7 @@ export async function ownerLogin(email, password) {
     password,
   };
   // make API call
-  const response = await axios.post(`${config.url}/owner/login`, body);
+  const response = await axios.post(`${config.url}/api/owner/login`, body);
 
   // read JSON data (response)
   return response.data;
@@ -32,7 +32,7 @@ export async function ownerRegister(
     role_id,
   };
   // make API call
-  const response = await axios.post(`${config.url}/owner/register`, body);
+  const response = await axios.post(`${config.url}/api/owner/register`, body);
 
   // read JSON data (response)
   return response.data;

@@ -13,12 +13,12 @@ app.use(express.json());
 app.use((request, response, next) => {
   // check if token is required for the API
   if (
-    request.url === "/user/login" ||
-    request.url === "/user/register" ||
-    request.url === "/owner/login" ||
-    request.url === "/owner/register" ||
-    request.url === "/admin/register" ||
-    request.url === "/admin/login"
+    request.url === "/api/user/login" ||
+    request.url === "/api/user/register" ||
+    request.url === "/api/owner/login" ||
+    request.url === "/api/owner/register" ||
+    request.url === "/api/admin/register" ||
+    request.url === "/api/admin/login"
   ) {
     // skip verifying the token
     next();
@@ -51,10 +51,10 @@ const placeRouter = require("./routes/place");
 const ownerRouter = require("./routes/owner");
 const adminRouter = require("./routes/admin");
 
-app.use("/user", userRouter);
-app.use("/place", placeRouter);
-app.use("/owner", ownerRouter);
-app.use("/admin", adminRouter);
+app.use("/api/user", userRouter);
+app.use("/api/place", placeRouter);
+app.use("/api/owner", ownerRouter);
+app.use("/api/admin", adminRouter);
 
 app.listen(4000, "0.0.0.0", () => {
   console.log(`server started on port 4000`);

@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import { getAllCities } from "../../services/other";
 import City from "./city";
 import { useNavigate } from "react-router-dom";
-import CustomNavBar from "../../components/navbar/customNavbar";
+import CustomNavBar from "../../components/afterLoginNavbar/afterLoginNavbar";
 import Carousel from "../../components/carousel/carousel";
 import BeforeLoginNavbar from "../../components/beforeLoginNavbar/beforeLoginNavbar";
 import { Button, Container } from "reactstrap";

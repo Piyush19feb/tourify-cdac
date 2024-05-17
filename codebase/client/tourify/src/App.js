@@ -8,15 +8,17 @@ import OwnerLogin from "./pages/propertyOwner/ownerLogin";
 import OwnerRegister from "./pages/propertyOwner/ownerRegister";
 import Home from "./pages/home/home";
 import Footer from "./components/footer/footer";
-import SignUpCard from "./pages/dashboard/signUpCard";
+import SignUpCard from "./pages/signUpCard/signUpCard";
+import Dashboard from "./pages/dashboard/dashboard";
 
 function App() {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/signup" element={<SignUpCard />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/signup" element={<SignUpCard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/customer/login" element={<CustomerLogin />} />
         <Route path="/customer/register" element={<CustomerRegister />} />
         <Route path="/owner/login" element={<OwnerLogin />} />

@@ -32,7 +32,7 @@ export async function adminRegister(
     role_id,
   };
   // make API call
-  const response = await axios.post(`${config.url}/admin/register`, body);
+  const response = await axios.post(`${config.url}/api/admin/register`, body);
 
   // read JSON data (response)
   return response.data;

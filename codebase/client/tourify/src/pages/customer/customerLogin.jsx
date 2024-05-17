@@ -45,8 +45,7 @@ const CustomerLogin = () => {
         localStorage.setItem("token", token);
         localStorage.setItem("name", name);
 
-        toast.success("welcome to the application");
-        navigate("/home");
+        navigate("/dashboard");
       } else {
         toast.error("Invalid email or password !!");
       }

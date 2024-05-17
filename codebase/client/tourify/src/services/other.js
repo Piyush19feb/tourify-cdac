@@ -10,6 +10,6 @@ export async function getAllCities() {
     },
   };
 
-  const response = await axios.get(`${config.url}/place/all`, payload);
+  const response = await axios.get(`${config.url}/api/place/all`, payload);
   return response.data;
 }

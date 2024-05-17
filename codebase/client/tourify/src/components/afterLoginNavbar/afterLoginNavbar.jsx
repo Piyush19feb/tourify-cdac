@@ -22,8 +22,9 @@ import {
 } from "../../authentication/index.js";
 
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
-const CustomNavBar = () => {
+const AfterLoginNavbar = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [login, setLogin] = useState(false);
@@ -39,6 +40,7 @@ const CustomNavBar = () => {
     doLogout(() => {
       // logged out
       setLogin(false);
+      toast.success("Do Visit Again !!");
       navigate("/");
     });
   };
@@ -143,4 +145,4 @@ const CustomNavBar = () => {
   );
 };
 
-export default CustomNavBar;
+export default AfterLoginNavbar;

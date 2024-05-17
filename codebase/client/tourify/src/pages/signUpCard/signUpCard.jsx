@@ -14,7 +14,7 @@ import {
 import "./signUpCard.css";
 import { useNavigate } from "react-router-dom";
 import City from "../home/city";
-import CustomNavBar from "../../components/navbar/customNavbar";
+import CustomNavBar from "../../components/afterLoginNavbar/afterLoginNavbar";
 import BeforeLoginNavbar from "../../components/beforeLoginNavbar/beforeLoginNavbar";
 import BeforeLoginNavWithoutLoginBtn from "../../components/beforeLoginNavWithoutLoginBtn/beforeLoginNavWithoutLoginBtn";
 

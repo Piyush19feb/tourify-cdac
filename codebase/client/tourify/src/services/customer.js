@@ -8,7 +8,7 @@ export async function login(email, password) {
     password,
   };
   // make API call
-  const response = await axios.post(`${config.url}/user/login`, body);
+  const response = await axios.post(`${config.url}/api/user/login`, body);
 
   // read JSON data (response)
   return response.data;
@@ -25,7 +25,7 @@ export async function register(name, email, password, phone, address, role_id) {
     role_id,
   };
   // make API call
-  const response = await axios.post(`${config.url}/user/register`, body);
+  const response = await axios.post(`${config.url}/api/user/register`, body);
 
   // read JSON data (response)
   return response.data;
