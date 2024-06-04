@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { login } from "../../services/customer";
+import { login } from "../../../services/customer";
 import {
   Button,
   Card,
@@ -15,8 +15,7 @@ import {
   Label,
   Row,
 } from "reactstrap";
-import BeforeLoginNavbar from "../../components/beforeLoginNavbar/beforeLoginNavbar";
-import BeforeLoginNavWithoutLoginBtn from "../../components/beforeLoginNavWithoutLoginBtn/beforeLoginNavWithoutLoginBtn";
+import BeforeLoginNavWithoutLoginBtn from "../../../components/beforeLoginNavWithoutLoginBtn/beforeLoginNavWithoutLoginBtn";
 
 const CustomerLogin = () => {
   // create state members

@@ -24,6 +24,8 @@ import {
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
+import "./afterLoginNavbar.css";
+
 const AfterLoginNavbar = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
@@ -109,7 +111,9 @@ const AfterLoginNavbar = () => {
                 </NavItem>
 
                 <NavItem>
-                  <NavLink onClick={logout}>Logout</NavLink>
+                  <NavLink onClick={logout} className="pointer">
+                    Logout
+                  </NavLink>
                 </NavItem>
               </>
             )}
