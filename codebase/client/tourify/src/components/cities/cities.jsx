@@ -38,7 +38,8 @@ const Cities = () => {
                 color="dark"
                 outline
                 onClick={() => {
-                  navigate("/customer/properties");
+                  // navigate("/customer/properties/:Agra");
+                  navigate(`/customer/properties/${"Agra"}`);
                 }}
               >
                 Let's Visit

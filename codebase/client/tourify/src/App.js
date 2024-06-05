@@ -12,7 +12,7 @@ import Dashboard from "./pages/dashboard/dashboard";
 import PropertyHome from "./pages/propertyHome/propertyHome";
 import CustomerLogin from "./pages/customer/login/customerLogin";
 import CustomerRegister from "./pages/customer/register/customerRegister";
-import PropertyBooking from "./pages/customer/booking/propertyBooking";
+import PropertyDetails from "./pages/customer/propertyDetails/propertyDetails";
 
 function App() {
   return (
@@ -25,8 +25,14 @@ function App() {
 
         <Route path="/customer/login" element={<CustomerLogin />} />
         <Route path="/customer/register" element={<CustomerRegister />} />
-        <Route path="/customer/properties" element={<PropertyHome />} />
-        <Route path="/customer/book" element={<PropertyBooking />} />
+        <Route
+          path="/customer/properties/:cityName"
+          element={<PropertyHome />}
+        />
+        <Route
+          path="/customer/propertydetails/:city/:id"
+          element={<PropertyDetails />}
+        />
 
         <Route path="/owner/login" element={<OwnerLogin />} />
         <Route path="/owner/register" element={<OwnerRegister />} />

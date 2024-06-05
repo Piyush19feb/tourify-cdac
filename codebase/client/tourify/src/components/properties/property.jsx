@@ -41,10 +41,13 @@ const Property = ({ property }) => {
                   color="dark"
                   outline
                   onClick={() => {
-                    navigate("/customer/book");
+                    // navigate("/customer/propertydetails");
+                    navigate(
+                      `/customer/propertydetails/${property.name}/${property.id}`
+                    );
                   }}
                 >
-                  Book Now
+                  More Details
                 </Button>
               </div>
             </MDBCardBody>

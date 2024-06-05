@@ -4,15 +4,16 @@ import { getAllPropsInCity } from "../../services/properties";
 import Property from "./property";
 import "./propertyList.css";
 
-const PropertyList = (city) => {
+const PropertyList = ({ city }) => {
   const [properties, setProperties] = useState([]);
 
   useEffect(() => {
     loadProperties();
-  });
+  }, []);
 
   const loadProperties = async () => {
     const result = await getAllPropsInCity(city);
+    console.log("PropertyListPage", city, result);
     if (result["status"] === "success") {
       setProperties(result["data"]);
     } else {
