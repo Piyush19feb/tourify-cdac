@@ -40,9 +40,11 @@ const CustomerLogin = () => {
       if (result.status === "success") {
         const token = result.data.token;
         const name = result.data.name;
+        const id = result.data.id;
 
         localStorage.setItem("token", token);
         localStorage.setItem("name", name);
+        localStorage.setItem("c_id", id);
 
         navigate("/dashboard");
       } else {

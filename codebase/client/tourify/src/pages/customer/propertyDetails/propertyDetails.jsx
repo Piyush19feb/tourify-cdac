@@ -28,7 +28,8 @@ const PropertyDetails = () => {
     console.log("propertydetails page: ", city, id);
     if (result["status"] === "success" && result.data.length === 1) {
       setProperty(result["data"][0]);
-      // console.log(result["data"][0]);
+      localStorage.setItem("p_id", result["data"][0].id);
+      localStorage.setItem("p_rate", result["data"][0].rate);
     } else {
       toast.error(result["error"]);
     }
@@ -37,7 +38,7 @@ const PropertyDetails = () => {
   return (
     <>
       <AfterLoginNavbar />
-      
+
       {/* <center>
         <h1>This is property Details page</h1>
       </center>
@@ -52,11 +53,21 @@ const PropertyDetails = () => {
               src={property?.img}
               alt="..."
             />
-            <MDBCardBody>
-              <MDBCardTitle>{property?.title}</MDBCardTitle>
-              <MDBCardText>{property?.description}</MDBCardText>
-              <MDBCardText>{property?.address}</MDBCardText>
-              <MDBCardText>{property?.rate}</MDBCardText>
+            <MDBCardBody className="details">
+              <MDBCardTitle>
+                <h5>Name:</h5> {property?.title}
+                <br />
+                <br />
+              </MDBCardTitle>
+              <MDBCardText>
+                <h5>Description:</h5> {property?.description}
+              </MDBCardText>
+              <MDBCardText>
+                <h5>Address:</h5> {property?.address}
+              </MDBCardText>
+              <MDBCardText>
+                <h5>Rate:</h5> ₹{property?.rate}/night
+              </MDBCardText>
               <MDBCardText>
                 <small className="text-muted">Last updated 3 mins ago</small>
               </MDBCardText>
@@ -65,7 +76,7 @@ const PropertyDetails = () => {
                   color="dark"
                   outline
                   onClick={() => {
-                    navigate("/customer/book");
+                    navigate("/customer/booking");
                   }}
                 >
                   Book Now

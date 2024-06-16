@@ -51,12 +51,14 @@ const placeRouter = require("./routes/place");
 const ownerRouter = require("./routes/owner");
 const adminRouter = require("./routes/admin");
 const propertiesRouter = require("./routes/properties");
+const bookingRouter = require("./routes/booking");
 
 app.use("/api/user", userRouter);
 app.use("/api/place", placeRouter);
 app.use("/api/owner", ownerRouter);
 app.use("/api/admin", adminRouter);
 app.use("/api/properties", propertiesRouter);
+app.use("/api/booking", bookingRouter);
 
 app.listen(4000, "0.0.0.0", () => {
   console.log(`server started on port 4000`);

@@ -7,3 +7,11 @@
 .myImg{
     height: 450px;
 }
+
+.details{
+    text-align: left;
+}
+
+h5{
+    display: inline;
+}
