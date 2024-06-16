@@ -14,20 +14,20 @@ function Home() {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    loadCities();
-  }, []);
+  // useEffect(() => {
+  //   loadCities();
+  // }, []);
 
-  const loadCities = async () => {
-    const result = await getAllCities();
+  // const loadCities = async () => {
+  //   const result = await getAllCities();
 
-    if (result["status"] === "success") {
-      toast.success("got the data");
-      // console.log(result.data);
-      setCities(result.data);
-      console.log(cities);
-    }
-  };
+  //   if (result["status"] === "success") {
+  //     toast.success("got the data");
+  //     // console.log(result.data);
+  //     setCities(result.data);
+  //     console.log(cities);
+  //   }
+  // };
 
   return (
     <div>

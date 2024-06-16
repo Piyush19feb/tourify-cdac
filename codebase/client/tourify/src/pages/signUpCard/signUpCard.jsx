@@ -23,21 +23,21 @@ function SignUpCard() {
   const navigate = useNavigate();
   const flag = false;
 
-  useEffect(() => {
-    loadCities();
-  }, []);
+  // useEffect(() => {
+  //   loadCities();
+  // }, []);
 
-  const loadCities = async () => {
-    const result = await getAllCities();
+  // const loadCities = async () => {
+  //   const result = await getAllCities();
 
-    if (result["status"] === "success") {
-      toast.success("got the data");
-      // console.log(result.data);
-      setCities(result.data);
-      console.log("cities");
-      console.log(cities);
-    }
-  };
+  //   if (result["status"] === "success") {
+  //     toast.success("got the data");
+  //     // console.log(result.data);
+  //     setCities(result.data);
+  //     console.log("cities");
+  //     console.log(cities);
+  //   }
+  // };
 
   const customerLogin = () => {
     navigate("/customer/login");

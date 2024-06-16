@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 
 const PropertyHome = () => {
   const { cityName } = useParams();
-  console.log("useparams: ", cityName);
+  // console.log("useparams: ", cityName);
 
   return (
     <div>
