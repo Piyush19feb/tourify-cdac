@@ -58,7 +58,7 @@ app.use("/api/place", placeRouter);
 app.use("/api/owner", ownerRouter);
 app.use("/api/admin", adminRouter);
 app.use("/api/properties", propertiesRouter);
-app.use("/api/booking", bookingRouter);
+app.use("/api/property", bookingRouter);
 
 app.listen(4000, "0.0.0.0", () => {
   console.log(`server started on port 4000`);

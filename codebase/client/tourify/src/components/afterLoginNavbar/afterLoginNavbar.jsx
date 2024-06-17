@@ -69,19 +69,13 @@ const AfterLoginNavbar = () => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>
             <NavItem>
-              <NavLink tag={ReactLink} to="/home">
+              <NavLink tag={ReactLink} to="/dashboard">
                 Home
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={ReactLink} to="/about">
-                About
-              </NavLink>
-            </NavItem>
-
-            <NavItem>
-              <NavLink tag={ReactLink} to="/services">
-                Services
+              <NavLink tag={ReactLink} to="/customer/mybookings">
+                My Bookings
               </NavLink>
             </NavItem>
 
