@@ -14,6 +14,7 @@ import CustomerLogin from "./pages/customer/login/customerLogin";
 import CustomerRegister from "./pages/customer/register/customerRegister";
 import PropertyDetails from "./pages/customer/propertyDetails/propertyDetails";
 import PropertyBooking from "./pages/propertyBooking/propertyBooking";
+import MyBookings from "./pages/customer/myBookings/myBookings";
 
 function App() {
   return (
@@ -34,8 +35,8 @@ function App() {
           path="/customer/propertydetails/:city/:id"
           element={<PropertyDetails />}
         />
-
         <Route path="/customer/booking" element={<PropertyBooking />} />
+        <Route path="/customer/mybookings" element={<MyBookings />} />
 
         <Route path="/owner/login" element={<OwnerLogin />} />
         <Route path="/owner/register" element={<OwnerRegister />} />

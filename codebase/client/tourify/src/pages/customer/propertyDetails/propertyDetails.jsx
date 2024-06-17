@@ -68,9 +68,6 @@ const PropertyDetails = () => {
               <MDBCardText>
                 <h5>Rate:</h5> ₹{property?.rate}/night
               </MDBCardText>
-              <MDBCardText>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </MDBCardText>
               <div>
                 <Button
                   color="dark"

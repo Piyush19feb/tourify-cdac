@@ -24,11 +24,8 @@ export async function letsBookIt(
     bill,
   };
 
-  console.log("Token", actualToken);
-  console.log("Body:", body);
-
   const response = await axios.post(
-    `${config.url}/api/booking/property`,
+    `${config.url}/api/property/book`,
     body,
     payload
   );
@@ -40,5 +37,23 @@ export async function letsBookIt(
   //     body
   //   );
 
+  return response.data;
+}
+
+// customer's bookings
+export async function getAllBookings() {
+  let actualToken = localStorage.getItem("token");
+  let cust_id = localStorage.getItem("c_id");
+  const payload = {
+    headers: {
+      token: actualToken, // Assuming token is for authorization
+    },
+  };
+
+  const response = await axios.get(
+    `${config.url}/api/property/bookings/${cust_id}`,
+    payload
+  );
+  // console.log("data: ", response.data);
   return response.data;
 }
