@@ -74,6 +74,11 @@ const AfterLoginNavbar = () => {
               </NavLink>
             </NavItem>
             <NavItem>
+              <NavLink tag={ReactLink} to="/customer/profile">
+                Profile
+              </NavLink>
+            </NavItem>
+            <NavItem>
               <NavLink tag={ReactLink} to="/customer/mybookings">
                 My Bookings
               </NavLink>
