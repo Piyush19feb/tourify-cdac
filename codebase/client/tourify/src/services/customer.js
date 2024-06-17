@@ -30,3 +30,18 @@ export async function register(name, email, password, phone, address, role_id) {
   // read JSON data (response)
   return response.data;
 }
+
+// customer's profile
+export async function getProfile() {
+  let actualToken = localStorage.getItem("token");
+  // let cust_id = localStorage.getItem("c_id");
+  const payload = {
+    headers: {
+      token: actualToken, // Assuming token is for authorization
+    },
+  };
+
+  const response = await axios.get(`${config.url}/api/user/profile`, payload);
+  // console.log("data: ", response.data);
+  return response.data;
+}
