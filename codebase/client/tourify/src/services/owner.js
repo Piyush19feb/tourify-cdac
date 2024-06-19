@@ -37,3 +37,62 @@ export async function ownerRegister(
   // read JSON data (response)
   return response.data;
 }
+
+// add property
+
+export async function addProperty(
+  title,
+  address,
+  rate,
+  description,
+  img,
+  place_id,
+  category_id,
+  user_id
+) {
+  let actualToken = localStorage.getItem("token");
+
+  const payload = {
+    headers: {
+      token: actualToken, // Assuming token is for authorization
+    },
+  };
+
+  const body = {
+    title,
+    address,
+    rate,
+    description,
+    img,
+    place_id,
+    category_id,
+    user_id,
+  };
+
+  const response = await axios.post(
+    `${config.url}/api/properties/add`,
+    body,
+    payload
+  );
+
+  return response.data;
+}
+
+// getting owner properties
+export async function myProperties(poid) {
+  let actualToken = localStorage.getItem("token");
+
+  const payload = {
+    headers: {
+      token: actualToken,
+    },
+  };
+
+  // make API call
+  const response = await axios.get(
+    `${config.url}/api/properties/owner/${poid}`,
+    payload
+  );
+
+  return response.data;
+}

@@ -40,6 +40,7 @@ router.post("/login", (request, response) => {
           const token = jwt.sign(payload, config.secret);
           const userData = {
             token,
+            id: `${user["id"]}`,
             name: `${user["name"]}`,
           };
           response.send(utils.createSuccessResult(userData));

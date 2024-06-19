@@ -12,6 +12,7 @@ import {
 import "./propertyDetails.css";
 import { Button } from "reactstrap";
 import { useNavigate, useParams } from "react-router-dom";
+import "./propertyDetails.css";
 
 const PropertyDetails = () => {
   const [property, setProperty] = useState();

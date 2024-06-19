@@ -1,0 +1,23 @@
+.myCards{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.myCardText{
+    text-align: justify;
+}
+
+.myCardImg{
+    height: 300px;
+    width: 500px;
+}
+
+.myDiv{
+    margin: 10px;
+    padding: 10px;
+    height: fit-content;
+    width: 800px;
+    text-align: center;
+}

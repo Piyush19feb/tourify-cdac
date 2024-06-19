@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { register } from "../../services/customer";
+import { register } from "../../../services/customer";
 import { Link, useNavigate } from "react-router-dom";
 
 import {
@@ -17,8 +17,8 @@ import {
   Label,
   Row,
 } from "reactstrap";
-import { ownerRegister } from "../../services/owner";
-import BeforeLoginNavWithoutLoginBtn from "../../components/beforeLoginNavWithoutLoginBtn/beforeLoginNavWithoutLoginBtn";
+import { ownerRegister } from "../../../services/owner";
+import BeforeLoginNavWithoutLoginBtn from "../../../components/beforeLoginNavWithoutLoginBtn/beforeLoginNavWithoutLoginBtn";
 
 // this is register component for customer
 const OwnerRegister = () => {
@@ -59,7 +59,7 @@ const OwnerRegister = () => {
       //   if (result["status"] === "success") {
       if (result.status === "success") {
         toast.success("User Registered successfully");
-        navigate("/home");
+        navigate("/owner/login");
       } else {
         toast.error("User Registration failed !!");
       }
