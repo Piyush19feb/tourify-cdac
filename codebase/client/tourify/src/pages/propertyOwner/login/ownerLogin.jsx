@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { login } from "../../services/customer";
+import { login } from "../../../services/customer";
 import {
   Button,
   Card,
@@ -15,8 +15,8 @@ import {
   Label,
   Row,
 } from "reactstrap";
-import { ownerLogin } from "../../services/owner";
-import BeforeLoginNavWithoutLoginBtn from "../../components/beforeLoginNavWithoutLoginBtn/beforeLoginNavWithoutLoginBtn";
+import { ownerLogin } from "../../../services/owner";
+import BeforeLoginNavWithoutLoginBtn from "../../../components/beforeLoginNavWithoutLoginBtn/beforeLoginNavWithoutLoginBtn";
 
 const OwnerLogin = () => {
   // create state members
@@ -41,12 +41,14 @@ const OwnerLogin = () => {
       if (result.status === "success") {
         const token = result.data.token;
         const name = result.data.name;
+        const po_id = result.data.id;
 
         localStorage.setItem("token", token);
         localStorage.setItem("name", name);
+        localStorage.setItem("po_id", po_id);
 
         toast.success("welcome to the application");
-        navigate("/home");
+        navigate("/owner/dashboard");
       } else {
         toast.error("Invalid email or password !!");
       }

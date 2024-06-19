@@ -3,19 +3,24 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import AdminLogin from "./pages/admin/adminLogin";
-import OwnerLogin from "./pages/propertyOwner/ownerLogin";
-import OwnerRegister from "./pages/propertyOwner/ownerRegister";
 import Home from "./pages/home/home";
 import Footer from "./components/footer/footer";
 import SignUpCard from "./pages/signUpCard/signUpCard";
 import Dashboard from "./pages/dashboard/dashboard";
 import PropertyHome from "./pages/propertyHome/propertyHome";
+
 import CustomerLogin from "./pages/customer/login/customerLogin";
 import CustomerRegister from "./pages/customer/register/customerRegister";
 import PropertyDetails from "./pages/customer/propertyDetails/propertyDetails";
 import PropertyBooking from "./pages/propertyBooking/propertyBooking";
 import MyBookings from "./pages/customer/myBookings/myBookings";
 import CustomerProfile from "./pages/customer/profile/customerProfile";
+
+import OwnerLogin from "./pages/propertyOwner/login/ownerLogin";
+import OwnerRegister from "./pages/propertyOwner/register/ownerRegister";
+import OwnerDashboard from "./pages/propertyOwner/dashboard/dashboard";
+import AddProperty from "./pages/propertyOwner/addProperty/addProperty";
+import MyProperties from "./pages/propertyOwner/myProps/myProperties";
 
 function App() {
   return (
@@ -43,6 +48,9 @@ function App() {
         // owner routes
         <Route path="/owner/login" element={<OwnerLogin />} />
         <Route path="/owner/register" element={<OwnerRegister />} />
+        <Route path="/owner/dashboard" element={<OwnerDashboard />} />
+        <Route path="/owner/myprops" element={<MyProperties />} />
+        <Route path="/owner/add/property/:cityId" element={<AddProperty />} />
         // admin routes
         <Route path="/admin/login" element={<AdminLogin />} />
       </Routes>
