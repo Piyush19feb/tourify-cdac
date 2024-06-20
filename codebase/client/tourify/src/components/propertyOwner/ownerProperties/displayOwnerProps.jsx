@@ -16,11 +16,11 @@ const DisplayOwnerProps = ({ property }) => {
   const navigate = useNavigate();
 
   return (
-    <center>
-      <div className="myDiv">
-        <MDBCard className="mb-3">
+    <MDBRow className="row-cols-1 row-cols-md-3 g-4 myCards1">
+      <MDBCol>
+        <MDBCard className="h-100">
           <MDBCardImage
-            className="myImg"
+            className="myCardImg"
             position="top"
             src={property?.img}
             alt="..."
@@ -42,8 +42,8 @@ const DisplayOwnerProps = ({ property }) => {
             </MDBCardText>
           </MDBCardBody>
         </MDBCard>
-      </div>
-    </center>
+      </MDBCol>
+    </MDBRow>
   );
 };
 

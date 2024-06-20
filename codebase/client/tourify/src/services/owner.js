@@ -96,3 +96,18 @@ export async function myProperties(poid) {
 
   return response.data;
 }
+
+// owner's profile
+export async function getOwnerProfile() {
+  let actualToken = localStorage.getItem("token");
+  // let cust_id = localStorage.getItem("c_id");
+  const payload = {
+    headers: {
+      token: actualToken, // Assuming token is for authorization
+    },
+  };
+
+  const response = await axios.get(`${config.url}/api/user/profile`, payload);
+  // console.log("data: ", response.data);
+  return response.data;
+}

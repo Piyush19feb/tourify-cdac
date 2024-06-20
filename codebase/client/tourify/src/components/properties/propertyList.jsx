@@ -23,7 +23,7 @@ const PropertyList = ({ city }) => {
 
   return (
     <div>
-      <div className="myDiv">
+      <div>
         {properties.map((property) => {
           return <Property property={property} />;
         })}

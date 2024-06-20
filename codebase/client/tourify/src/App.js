@@ -21,6 +21,7 @@ import OwnerRegister from "./pages/propertyOwner/register/ownerRegister";
 import OwnerDashboard from "./pages/propertyOwner/dashboard/dashboard";
 import AddProperty from "./pages/propertyOwner/addProperty/addProperty";
 import MyProperties from "./pages/propertyOwner/myProps/myProperties";
+import OwnerProfile from "./pages/propertyOwner/profile/ownerProfile";
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
         <Route path="/owner/register" element={<OwnerRegister />} />
         <Route path="/owner/dashboard" element={<OwnerDashboard />} />
         <Route path="/owner/myprops" element={<MyProperties />} />
+        <Route path="/owner/profile" element={<OwnerProfile />} />
         <Route path="/owner/add/property/:cityId" element={<AddProperty />} />
         // admin routes
         <Route path="/admin/login" element={<AdminLogin />} />
@@ -62,10 +64,6 @@ function App() {
         autoClose={4000}
       />
 
-      <br />
-      <br />
-      <br />
-      <br />
       <Footer />
     </div>
   );

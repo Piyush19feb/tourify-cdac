@@ -1,4 +1,4 @@
-.myCards{
+.myCards1{
     margin-left: auto;
     margin-right: auto;
     margin-top: auto;
@@ -11,13 +11,8 @@
 
 .myCardImg{
     height: 300px;
-    width: 500px;
 }
 
-.myDiv{
-    margin: 10px;
-    padding: 10px;
-    height: fit-content;
-    width: 800px;
-    text-align: center;
+.details{
+    text-align: justify;
 }
