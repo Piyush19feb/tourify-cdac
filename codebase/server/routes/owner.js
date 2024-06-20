@@ -73,4 +73,19 @@ router.put("/update", (request, response) => {
   );
 });
 
+// get all the bookings of owner's property
+
+router.get("/props/bookings/:o_id", (request, response) => {
+  const { o_id } = request.params;
+
+  const statement = `select b.id, p.title, b.from_date, b.to_date, b.bill, u.name, u.email, u.phone from bookings_tb AS b
+                      JOIN properties_tb AS p ON b.property_id = p.id
+                      JOIN users_tb AS u ON b.user_id = u.id
+                      where p.user_id = ?;`;
+
+  db.pool.execute(statement, [o_id], (error, result) => {
+    response.send(utils.createResult(error, result));
+  });
+});
+
 module.exports = router;
