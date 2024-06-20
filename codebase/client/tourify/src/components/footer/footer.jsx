@@ -11,7 +11,7 @@ import "./footer.css";
 
 const Footer = () => {
   return (
-    <div>
+    <div style={{ marginTop: "40px" }}>
       <MDBFooter className="bg-dark text-center text-white">
         <MDBContainer className="p-4 pb-0">
           <section className="mb-4">

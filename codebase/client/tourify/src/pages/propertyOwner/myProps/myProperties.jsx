@@ -17,7 +17,7 @@ const MyProperties = () => {
     const result = await myProperties(poid);
 
     if (result["status"] === "success") {
-      toast.success("Got the props");
+      // toast.success("Got the props");
       setProperties(result["data"]);
     } else {
       toast.error("Unable to get the props.");
@@ -28,7 +28,7 @@ const MyProperties = () => {
     <>
       <OwnerAfterLoginNav />
 
-      <div className="myDiv">
+      <div>
         {properties.map((property) => {
           return <DisplayOwnerProps property={property} />;
         })}
